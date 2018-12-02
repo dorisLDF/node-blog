@@ -1,2 +1,2 @@
 # node-Blog
-express+modo
+express+mongodb搭建的博客项目
