@@ -1,0 +1,25 @@
+{
+  "name": "node-book",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "server_dev": "cross-env NODE_ENV=development nodemon ./server/bin/www",
+    "server_pro": "cross-env NODE_ENV=production pm2 start ./server/bin/www --name=lvfeifei"
+  },
+  "dependencies": {
+    "connect-mongo": "^2.0.2",
+    "cookie-parser": "~1.4.3",
+    "cross-env": "^5.2.0",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-session": "^1.15.6",
+    "file-stream-rotator": "^0.4.1",
+    "http-errors": "~1.6.2",
+    "mongoose": "^5.3.14",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.18.7",
+    "pm2": "^3.2.2",
+    "pug": "2.0.0-beta11",
+    "session-file-store": "^1.2.0"
+  }
+}

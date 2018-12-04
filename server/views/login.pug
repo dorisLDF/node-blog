@@ -1,0 +1,24 @@
+extends ./common/layout
+
+block head
+  link(rel="stylesheet" href=`${global.resUrl}/css/login.css`)
+block title
+  title 登录
+
+block content
+  include ./common/header
+  .login-box
+    h1.h1 登录
+    <div class="input-group">
+      <span class="input-group-addon">手机号</span>
+      <input type="text" class="form-control" placeholder="手机号" id="phone" />
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon">密码</span>
+      <input type="password" class="form-control" placeholder="密码" id="pwd" />
+    </div>
+    button.btn.btn-primary#loginBtn 点我登录
+  
+block footer
+  script(type="text/javascript" src=`${global.resUrl}/js/login.js`)
+

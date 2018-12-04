@@ -1,2 +1,2 @@
 # node-blog
-express+mo
+express+mongodb

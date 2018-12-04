@@ -1,0 +1,24 @@
+extends ./common/layout
+
+block head
+  link(rel="stylesheet" href=`${global.resUrl}/css/register.css`)
+block title
+  title 吕肥肥的注册页
+
+block content
+  include ./common/header
+  .register-box
+    h1.h1 注册
+    <div class="input-group">
+      <span class="input-group-addon">手机号</span>
+      <input type="text" class="form-control" placeholder="手机号" id="phone" />
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon">密码</span>
+      <input type="password" class="form-control" placeholder="密码" id="pwd" />
+    </div>
+    button.btn.btn-primary#registerBtn 点我注册
+  
+block footer
+  script(type="text/javascript" src=`${global.resUrl}/js/register.js`)
+

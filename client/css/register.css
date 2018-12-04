@@ -1,0 +1,16 @@
+.register-box{
+  width: 85%;
+  margin: 150px auto;
+}
+.h1 {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 24px;
+}
+.input-group {
+  margin-bottom: 20px;
+}
+.btn-primary {
+  display: block;
+  margin: 20px auto;
+}
