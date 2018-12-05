@@ -2,6 +2,39 @@
   padding: 0;
   margin: 0;
 }
+body {
+  background: #f4f5f5;
+  font-size: 14px;
+  overflow: hidden;
+}
+.theme-color {
+  color: #0371df;
+}
+
+
 .com-header {
-  text-align: center;
+  min-width: 1200px;
+  height: 60px;
+  background: #fff;
+}
+.com-header .header-inner {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto 20px;
+  width: 1200px;
+}
+.com-header .logo-img {
+  margin-top: 11px;
+}
+.com-header .no-login-box,
+.com-header .login-box {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+}
+.com-header .login-btn,
+.com-header .register-btn,
+.com-header .login-box {
+  color: #0371df;
+  font-size: 16px;
 }

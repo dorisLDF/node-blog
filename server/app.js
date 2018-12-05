@@ -6,8 +6,10 @@ var session = require('express-session');
 var morgan = require('morgan');
 var fs = require('fs');
 var FileStreamRotator = require('file-stream-rotator');
-var FileStore = require('session-file-store')(session);
-const MongoStore = require('connect-mongo')(session);
+// var FileStore = require('session-file-store')(session);
+var MongoStore = require('connect-mongo')(session);
+var favicon = require('serve-favicon');
+
 
 // 页面路由
 var indexRouter = require('./routes/page/index');
@@ -41,6 +43,7 @@ var accessLogStream = FileStreamRotator.getStream({
   verbose: false
 })
 app.use(morgan('combined', { stream: accessLogStream }));
+app.use(favicon(path.join(__dirname, './', 'favicon.ico')));
 
 // 判断环境变量
 global.resUrl = 'https://res.666.com';
