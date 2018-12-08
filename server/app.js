@@ -10,15 +10,16 @@ var FileStreamRotator = require('file-stream-rotator');
 var MongoStore = require('connect-mongo')(session);
 var favicon = require('serve-favicon');
 
-
 // 页面路由
 var indexRouter = require('./routes/page/index');
 var loginRouter = require('./routes/page/login');
 var registerRouter = require('./routes/page/register');
+var myRouter = require('./routes/page/my');
 
 // api路由
 var users = require('./routes/api/users');
 var login = require('./routes/api/login');
+var uploadImg = require('./routes/api/uploadImg');
 
 // 中间件路由
 var auth = require('./routes/middle/auth');
@@ -32,7 +33,7 @@ app.set('view engine', 'pug');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // 日志文件
 var logDirectory = path.join(__dirname, '/logs');
@@ -69,10 +70,12 @@ app.use(auth);
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
+app.use('/my', myRouter);
 
 // api路由
 app.use('/api', login);
 app.use('/api', users);
+app.use('/api', uploadImg);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

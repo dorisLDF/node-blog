@@ -1,0 +1,29 @@
+extends ./common/layout
+
+block head
+  link(rel="stylesheet" href=`${global.resUrl}/css/my.css`)
+block title
+  title 个人资料
+
+block content
+  include ./common/header
+  .my-box
+    h1.h1 个人资料
+    ul.setting-list
+      li.item.clearfix
+        .title 头像
+        .set-box
+          img.head-img(src="https://user-gold-cdn.xitu.io/2017/12/15/160592d181ffe316?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1")
+          .upload-box
+            .tips 支持jpg，png格式大小5M以内的照片
+            .upload-btn
+              input.input#upload(type="file")
+              button.btn.btn-primary.btn-change 点击上传
+
+
+
+  
+  
+block footer
+  script(type="text/javascript" src=`${global.resUrl}/js/my.js`)
+

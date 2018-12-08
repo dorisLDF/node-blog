@@ -7,7 +7,6 @@ function auth(req, res, next) {
       next();
     } else {
       if (user) {
-        console.log(user);
         req._userInfo = user;
         next();
       } else {
