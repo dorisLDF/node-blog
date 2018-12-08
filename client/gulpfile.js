@@ -18,7 +18,7 @@ gulp.task('clean', function () {
 // html
 gulp.task('html', function() {
   // 处理html
-  gulp.src('./src/*/*.html')
+  gulp.src('./src/**/*.html')
     .pipe(htmlmin({
       removeComments: true, // 清除HTML注释
       collapseWhitespace: true, // 压缩HTML
@@ -35,7 +35,7 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./dist/'));
   
   // 处理pug
-  gulp.src('./src/*/*.pug')
+  gulp.src('./src/**/*.pug')
     .pipe(pug())
     .on('error', function (err) {
       console.log(err);
@@ -50,7 +50,7 @@ gulp.task('html', function() {
 // css
 gulp.task('css', function() {
   // 处理css
-  gulp.src('./src/*/*.css')
+  gulp.src('./src/**/*.css')
     // css前缀
     .pipe(autoprefixer({
       browsers: ['last 5 versions'],
@@ -69,7 +69,7 @@ gulp.task('css', function() {
     .pipe(gulp.dest('./dist/'));
 
   // 处理stylus
-  gulp.src('./src/*/*.styl')
+  gulp.src('./src/**/*.styl')
     .pipe(stylus({
       'compress': true,
       'include css': true
@@ -94,7 +94,7 @@ gulp.task('css', function() {
 // js
 gulp.task('js', function() {
   // 这是指定**下面所有的js，包含index/libs/index.js
-  gulp.src('./src/*/*.js')
+  gulp.src('./src/**/*.js')
     // ES6转ES5
     .pipe(babel({
       presets: 'env'
@@ -123,7 +123,7 @@ gulp.task('watch', function () {
   // gulp.watch('./src/**/*.html', ['html']);
   gulp.watch('./src/css/*', ['css']);
   gulp.watch('./src/js/*', ['js']);
-  gulp.watch('./src/img/*', ['img']); 
+  gulp.watch('./src/imgs/*', ['img']); 
 });
 
 // 生产

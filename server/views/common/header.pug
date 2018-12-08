@@ -6,8 +6,9 @@
         a(href="javascript:;") 首页
     if userInfo
       <div class="login-box">
-        <img src='https://user-gold-cdn.xitu.io/2017/12/15/160592d181ffe316?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'  class="my-img"/>
-        <span>#{userInfo.phone}</span>
+        <a href="/my/index.html">
+          <img src="#{userInfo.headImg}"  class="my-img head-img"/>
+        </a>
       </div>
     else 
       <div class="no-login-box">

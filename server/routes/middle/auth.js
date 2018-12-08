@@ -1,18 +1,25 @@
+var Users = require('../../db/user.js');
+
 function auth(req, res, next) {
   var user = req.session && req.session.user;
-  if (req.path.indexOf('api') !== -1) {
-    next();
-  } else {
-    if (req.path === '/login/index.html' || req.path === '/register/index.html') {
+  Users.findOne({ _id: user && user._id }, function (err, data) {
+    if (err) {
+      throw err;
+    }
+    req._userInfo = data;
+    if (req.path.indexOf('api') !== -1) {
       next();
     } else {
-      if (user) {
-        req._userInfo = user;
+      if (req.path === '/login/index.html' || req.path === '/register/index.html') {
         next();
       } else {
-        res.redirect('/login/index.html');
+        if (data) {
+          next();
+        } else {
+          res.redirect('/login/index.html');
+        }
       }
     }
-  }
+  });
 }
 module.exports = auth;

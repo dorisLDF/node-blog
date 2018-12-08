@@ -2,7 +2,7 @@ $('#registerBtn').click(function() {
   var phone = $('#phone').val();
   var pwd = $('#pwd').val();
   $.ajax({
-    url: '/api/addUsers',
+    url: '/api/users/addUsers',
     type: 'post',
     data: {
       phone,

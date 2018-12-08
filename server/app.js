@@ -34,6 +34,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../upload')));
 
 // 日志文件
 var logDirectory = path.join(__dirname, '/logs');
@@ -74,8 +75,7 @@ app.use('/my', myRouter);
 
 // api路由
 app.use('/api', login);
-app.use('/api', users);
-app.use('/api', uploadImg);
+app.use('/api/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
