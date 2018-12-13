@@ -19,7 +19,6 @@ var myRouter = require('./routes/page/my');
 // api路由
 var users = require('./routes/api/users');
 var login = require('./routes/api/login');
-var uploadImg = require('./routes/api/uploadImg');
 
 // 中间件路由
 var auth = require('./routes/middle/auth');
