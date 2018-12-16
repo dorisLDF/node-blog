@@ -1,3 +1,3 @@
 # node-blog
-express+mongodb   
+express+mongodb
     
