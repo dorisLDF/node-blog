@@ -1,6 +1,8 @@
 .register-box{
-  width: 85%;
+  width: 400px;
   margin: 150px auto;
+  padding: 30px;
+  background: #fff;
 }
 .h1 {
   margin-bottom: 40px;

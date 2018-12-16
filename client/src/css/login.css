@@ -1,6 +1,9 @@
 .login-box{
-  width: 85%;
+  width: 400px;
   margin: 150px auto;
+  padding: 30px;
+  border-radius: 4px;
+  background: #fff;
 }
 .h1 {
   margin-bottom: 40px;
@@ -13,4 +16,16 @@
 .btn-primary {
   display: block;
   margin: 20px auto;
+}
+.input-group .yzm {
+  width: 120px;
+  height: 34px;
+}
+.yzm-code {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+svg {
+  height: 100%;
 }

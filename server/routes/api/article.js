@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-var multipart = require('connect-multiparty');
+
 var multipartMiddleware = multipart();
 var Users = require('../../db/user.js');
 
 // 新增用户信息
-router.use('/addUsers', (req, res) => {
+router.use('/addArticle', (req, res) => {
   var body = req.body;
-  Users.findOne({ phone: body.phone }, function(err, data) {
+  Users.findOne({ phone: body.phone }, function (err, data) {
     if (err) {
       res.json(err);
     } else if (data) {
